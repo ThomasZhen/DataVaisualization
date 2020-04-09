@@ -1,6 +1,7 @@
 # DataVaisualization
 
 Introduction:
+
     This project is about using the JavaScript library D3 to read in data from a csv file and visualiz the data using the force-directed graph.
     
 The two files:
