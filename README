@@ -1,0 +1,32 @@
+This file contains the intruction of how to use this application.
+
+For MAC system, on the same directory where the app.js file is located, do the following:
+npm install express.js
+npm install socket.io
+
+To run this application, on terminal, go the the directory where the app.js file is located, and then do:
+node app.js
+
+
+For the node styling functionality:
+SetNodeSize: You have to enter a positive integer number input.
+SetNodeVisibility: Type true or false in the input bar.
+SetNodeColor: You have to enter a color name
+
+
+For the link styling functionality:
+SetLinkVisibility: Type true or false in the input bar.
+SetLinkColor: You have to enter a color name.
+SetLinkLineDash: You have to enter two positive values and seperate them by a comma
+SetLinkWidth: You have to enter a positive integer
+SetLinkCurvature: You have to enter a positive integer
+SetLinkDirectionalArrowLength: For the arrow to be visible, you have to enter a positive integer greater than 3
+SetLinkDirectionalArrowColor: You have to enter a color value
+SetLinkDirectionalArrowRelPos: You have to enter a floating number beteen 0 and 1
+SetLinkDirectionalParticles: You have to enter a positive integer
+SetLinkDirectionalParticleSpeed: You have to enter a floating number between 0.01 and 0.1
+SetLinkDirectionalParticleWidth: You have to enter an integer value
+SetLinkDirectionalParticleColor: You have to enter a color name
+
+For the google charts, when you make a line disappear in the google chart, 
+you can click on the small icon on the upper right conner of the chart to make the line appear again.
