@@ -16,11 +16,16 @@ The error occurs because the max variable in the app.js file is 0, the only reas
 fs.readFile("blocks.json", function(err, data) function. However, the only reason it didn't get assign a value is because this function fails to read the file.
 But this function never throw any errors, and this below error doesn't alwasy show up, so it is difficult to debug.
 // ---------- 
-arrLinks[parseInt(tempLinks[i].source)].push(parseInt(tempLinks[i].target));
+We have an undefined value
+arrLinks[parseInt(tempLinks[i].target)] is undefined
+The max value is 0
+arrLinks[] is undefined
+/Users/tianrongzhen/Desktop/future/server/app.js:192
+          arrLinks[parseInt(tempLinks[i].source)].push(parseInt(tempLinks[i].target));
                                                   ^
 
 TypeError: Cannot read property 'push' of undefined
-    at /Users/tianrongzhen/Downloads/Data-Visualization/app.js:189:51
+    at /Users/tianrongzhen/Desktop/future/server/app.js:192:51
     at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
 // -----------
 
