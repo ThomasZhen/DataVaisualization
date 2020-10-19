@@ -7,6 +7,17 @@ npm install socket.io
 To run this application, on terminal, go the the directory where the app.js file is located, and then do:
 node app.js
 
+If you encouter the following error, try to do node app.js again, sometime you need to do it multiple times and the 
+error will go away. 
+This error doesn't always pop up, it pops up casually, so it is diffcult to debug. When it doesn't pop up, the program runs just fine.
+// ---------- 
+arrLinks[parseInt(tempLinks[i].source)].push(parseInt(tempLinks[i].target));
+                                                  ^
+
+TypeError: Cannot read property 'push' of undefined
+    at /Users/tianrongzhen/Downloads/Data-Visualization/app.js:189:51
+    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+// -----------
 
 For the node styling functionality:
 SetNodeSize: You have to enter a positive integer number input.
