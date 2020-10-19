@@ -882,9 +882,7 @@
 
 
         function selectHandler(chart, data, option1, option2, name1, name2, select){
-                console.log("The chart is");
-                console.log(chart);
-
+                
                 var columnNumber;
 
                 // var selection = chart.getSelection();
