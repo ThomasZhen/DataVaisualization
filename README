@@ -7,9 +7,11 @@ npm install socket.io
 To run this application, on terminal, go the the directory where the app.js file is located, and then do:
 node app.js
 
+If you see listening on localhost:3000, that means the program runs fine. Go to the browser and type localhost:3000 and you will see the UI.
+
 If you encouter the following error, try to do node app.js again, sometime you need to do it multiple times and the 
 error will go away. 
-This error doesn't always pop up, it pops up casually, so it is diffcult to debug. When it doesn't pop up, the program runs just fine.
+This error doesn't always pop up, it pops up casually, so it is difficult to debug. When it doesn't pop up, the program runs just fine.
 // ---------- 
 arrLinks[parseInt(tempLinks[i].source)].push(parseInt(tempLinks[i].target));
                                                   ^
