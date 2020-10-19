@@ -1,0 +1,74 @@
+.container-fluid{
+	/*overflow: hidden;*/
+}
+
+
+.body{
+	background-color: white;
+}
+
+
+.leftColumn{
+	/*background-color: gray;*/
+	background-color: white;
+}
+
+
+.middleColumn{
+	background-color: white;
+	border-left: thick solid black;
+	border-right: thick solid black;
+	/*background-color: black;*/
+	/*background-color: white;*/
+}
+
+.rightColumn{
+	/*background-color: gray;*/
+	background-color: white;
+}
+
+.firstRow {
+	height: 900px;
+}
+
+.buttonStyle {
+	background-color: white;
+	color: black;
+	float: left;
+}
+
+.buttonStyle2{
+	background-color: white;
+	font-size: 10px;
+	color: red;
+	float: left;
+	border: none;
+}
+
+.lineStyle {
+	/*border-color: black;
+	height: 4px;*/
+	border-top: 5px solid black; 
+}
+
+.lineDiv {
+	width: 150px;
+	/*border-bottom: thick solid black;*/
+	/*border-top: thick solid black;*/
+}
+
+.headerStyle {
+	color: black;
+}
+
+
+.rbt {
+	color: black;
+}
+
+.data1 {
+	height: 250px;
+}
+
+
+
