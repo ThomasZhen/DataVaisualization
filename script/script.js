@@ -526,7 +526,7 @@
                     );
                 }
                 if(steppedAreaChart != undefined){
-                    google.visualization.events.addListener(areaChart, 'select', 
+                    google.visualization.events.addListener(steppedAreaChart, 'select', 
                         function () {
 
                             var selection = steppedAreaChart.getSelection();
