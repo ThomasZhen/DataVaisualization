@@ -1,3 +1,4 @@
+// -------------- Note for how to set up the program -----------------
 This file contains the intruction of how to use this application.
 
 For MAC system, on the same directory where the app.js file is located, do the following:
@@ -8,7 +9,11 @@ To run this application, on terminal, go the the directory where the app.js file
 node app.js
 
 If you see listening on localhost:3000, that means the program runs fine. Go to the browser and type localhost:3000 and you will see the UI.
+// -------------- End of Note for how to set up the program -----------------
 
+
+
+// -------------- Note for the error ----------------------
 If you encouter the following error, try to do node app.js again, sometime you need to do it multiple times and the 
 error will go away. 
 This error doesn't always pop up, it pops up casually, so it is difficult to debug. When it doesn't pop up, the program runs just fine.
@@ -28,13 +33,22 @@ TypeError: Cannot read property 'push' of undefined
     at /Users/tianrongzhen/Desktop/future/server/app.js:192:51
     at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
 // -----------
+// -------------- End of Note for the error ----------------------
 
+
+
+
+// --------------  Note for the node styling ----------------
 For the node styling functionality:
 SetNodeSize: You have to enter a positive integer number input.
 SetNodeVisibility: Type true or false in the input bar.
 SetNodeColor: You have to enter a color name
+// --------------  End of Note for the node styling ----------------
 
 
+
+
+// -------------  Note for link styling -----------------
 For the link styling functionality:
 SetLinkVisibility: Type true or false in the input bar.
 SetLinkColor: You have to enter a color name.
@@ -48,6 +62,13 @@ SetLinkDirectionalParticles: You have to enter a positive integer
 SetLinkDirectionalParticleSpeed: You have to enter a floating number between 0.01 and 0.1
 SetLinkDirectionalParticleWidth: You have to enter an integer value
 SetLinkDirectionalParticleColor: You have to enter a color name
+// -------------  End of Note for link styling -----------------
 
-For the google charts, when you make a line disappear in the google chart, 
-you can click on the small icon on the upper right conner of the chart to make the line appear again.
+
+
+// --------------- Note for the google charts ----------------
+When you click on the line, the line will disappear. If you want the line to appear again, you can click on the small icon on the upper right conner of the chart 
+to make the line appear again.
+When you click on a specific node on the line, the whole line will remain the same, but other lines will become black. When you click the second time on the node,
+the color will become normal again. Meanwhile, you will not be able to select other node before the previous selected node's color has been changed back to normal.
+// ---------------- End of Note for the google charts
