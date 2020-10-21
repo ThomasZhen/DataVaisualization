@@ -249,6 +249,7 @@
 
 
 
+
         function renderControl(){
 
             var rbs = document.querySelectorAll('input[name="choice"]');
@@ -262,7 +263,6 @@
                 }
             }
         }
-
 
 
 
@@ -348,265 +348,393 @@
                     }
 
 
-
-                    // I think you can do it here because everything will be ready!
-
-                // for(var i = 0; i < listCharts.length; i++){
-                //     // console.log(listCharts[i]);
-                //     if(listCharts[i] != 0){
-
-                //         // console.log("listCharts[i] here is");
-                //         // console.log(listCharts[i]);
-
-
-                //         var ttxx = listCharts[i];
-
-                //         // console.log("The listCharts[i] is");
-                //         // console.log(listCharts[i]);
-                //         // console.log("i is");
-                //         // console.log(i);
-
-                //         var temp;
-                //         var iTractor = i;
-
-                //         /*
-                //             The real problem is, how do I know which chart got clicked on
-                //             You did add the event, but you can extract the correct getSelection();
-                //             Once you get the getSelection() working, everything will be fine.
-
-
-                //             Once the i value is gone to the end, you won't even be able to add the listerner.
-                //             But when you break it, the i value retains, I don't know why. 
-                //         */
-
-                //         google.visualization.events.addListener(listCharts[i], 'select', 
-                //             function () {
-                //                 // console.log("i you clicked on is");
-                //                 // console.log(i);
-
-                //                 // console.log("listCharts[i] is");
-                //                 // console.log(listCharts[i]);
-
-
-                //                 console.log("You clicked on a chart" + listCharts[i]);
-
-                //                 // var selection = listCharts[i].getSelection();
-                //                 // console.log("Selection is");
-                //                 // console.log(selection);
-                //                 // temp = selection;
-                //                 // lineDisappear(listCharts[i], listDatas[i], listOptions[i], listColumns[i], listSeries[i], selection);
-                //                 for(var j = 0; j < listCharts.length; j++){
-
-
-                //                     // console.log("ttxx is");
-                //                     // console.log(ttxx);
-
-                //                     // console.log("listCharts[j] is");
-                //                     // console.log(listCharts[j]);
-
-                //                     // console.log("listCharts[j] is");
-                //                     // console.log(listCharts[j] === ttxx);
-
-
-                //                     // console.log("In here i is");
-                //                     // console.log(iTractor);
-
-                //                         // if(j != i && listCharts[j] != 0){
-                //                     // if(listCharts[j] != 0){
-                //                         // if(listCharts[j] != 0 && listCharts[j] != listCharts[i]){
-
-                //                         // console.log("j is");
-                //                         // console.log(j);
-                //                         // lineDisappear(listCharts[j], listDatas[j], listOptions[j], listColumns[j], listSeries[j], temp);
-                                    
-                //                     // }
-
-                //                 }
-
-                //         });
-
-                //         // console.log("You are break;");
-
-                //         // break;
-                //     }
-                // } // end of the for loop 
-
-// google.visualization.events.addListener(lineChart, 'select', 
-//                 function (){
-//                     selectHandler(lineChart, lineData, option1, option2, name1, name2);
-//                 }
-// );
-
-
                 if(lineChart != undefined){
+
                     google.visualization.events.addListener(lineChart, 'select', 
-                        function () {
+                       
+                        function(){
 
+                            var temp = lineChart.getSelection()[0];
                             var selection = lineChart.getSelection();
+
+                           
+
+                            if(temp.row != null && temp.column != null){
+
+
+                                changeColor(lineChart, lineData, lineOption, temp, "lineView");
+
+                                if(barChart != undefined){
+                                    changeColor(barChart, barData, barOption, temp, "barView");
+                                }
+                                if(areaChart != undefined){
+                                    changeColor(areaChart, areaData, areaOption, temp, "areaView");
+                                }
+                                 if(steppedAreaChart != undefined){
+                                    changeColor(steppedAreaChart, steppedAreaData, steppedAreaOption, temp, "steppedAreaView");
+                                }
+                                 if(columnChart != undefined){
+                                    changeColor(columnChart, columnData, columnOption, temp, "columnView");
+                                }
+                                 if(comboChart != undefined){
+                                    changeColor(comboChart, comboData, comboOption, temp, "comboView");
+                                }
+
+                                if(lineCounter % 2 == 0){
+                                    selectHandler(lineChart, lineData, newOption1, newOption2, newName1, newName2, selection);
+                                }
                             
-                            lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection);
-                            selectHandler(lineChart, lineData, newOption1, newOption2, newName1, newName2, selection);
+                            } else {
 
-                            if(barChart != undefined){
-                                lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection);
-                                selectHandler(barChart, barData, newOption1, newOption2, newName1, newName2, selection);
-                            }
-                            if(areaChart != undefined){
-                                lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection);
-                                selectHandler(areaChart, areaData, newOption1, newOption2, newName1, newName2, selection);
-                            }
-                            if(steppedAreaChart != undefined){
-                                lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection);
-                                selectHandler(steppedAreaChart, steppedAreaData, newOption1, newOption2, newName1, newName2, selection);
-                            }
-                            if(columnChart != undefined){
-                                lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection);
-                                selectHandler(columnChart, columnData, newOption1, newOption2, newName1, newName2, selection);
-                            }
-                            if(comboChart != undefined){
-                                lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection);
-                                selectHandler(comboChart, comboData, newOption1, newOption2, newName1, newName2, selection);
-                            }
+                                lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "lineView");
 
+                                if(barChart != undefined){
+                                    lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
+                                }
+                                if(areaChart != undefined){
+
+                                    lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
+                                }
+                                if(steppedAreaChart != undefined){
+                                    lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection, "steppedAreaView");
+                                }
+                                if(columnChart != undefined){
+                                    lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");      
+                                }
+                                if(comboChart != undefined){
+                                    lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection, "comboView");
+                                }
+
+                            }
                         }
+                        
                     );
+
                 }
+
+
                 if(barChart != undefined){
+
                     google.visualization.events.addListener(barChart, 'select', 
-                        function () {
+                       
+                        function(){
 
+                            var temp = barChart.getSelection()[0];
                             var selection = barChart.getSelection();
-                            
-                            lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection);
-                            
-                            if(lineChart != undefined){
-                                lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection);
-                            }
-                            if(areaChart != undefined){
-                                lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection);
-                            }
-                            if(steppedAreaChart != undefined){
-                                lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection);
-                            }
-                            if(columnChart != undefined){
-                                lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection);
-                            }
-                            if(comboChart != undefined){
-                                lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection);
-                            }
 
+                           
+
+                            if(temp.row != null && temp.column != null){
+
+
+                                changeColor(barChart, barData, barOption, temp, "barView");
+
+                                if(lineChart != undefined){
+                                    changeColor(lineChart, lineData, lineOption, temp, "lineView");
+                                }
+                                if(areaChart != undefined){
+                                    changeColor(areaChart, areaData, areaOption, temp, "areaView");
+                                }
+                                 if(steppedAreaChart != undefined){
+                                    changeColor(steppedAreaChart, steppedAreaData, steppedAreaOption, temp, "steppedAreaView");
+                                }
+                                 if(columnChart != undefined){
+                                    changeColor(columnChart, columnData, columnOption, temp, "columnView");
+                                }
+                                 if(comboChart != undefined){
+                                    changeColor(comboChart, comboData, comboOption, temp, "comboView");
+                                }
+
+                                if(barCounter % 2 == 0){
+                                    selectHandler(barChart, barData, newOption1, newOption2, newName1, newName2, selection);
+                                }
+                            
+                            } else {
+
+                                lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
+
+                                if(lineChart != undefined){
+                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "lineView");
+                                }
+                                if(areaChart != undefined){
+                                    lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
+                                }
+                                if(steppedAreaChart != undefined){
+                                    lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection, "steppedAreaView");
+                                    
+                                }
+                                if(columnChart != undefined){
+                                    lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");
+                                    
+                                }
+                                if(comboChart != undefined){
+                                    lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection, "comboView");
+                                }
+
+                            }
                         }
+                        
                     );
+
                 }
-                if(areaChart != undefined){
+
+                 if(areaChart != undefined){
+
                     google.visualization.events.addListener(areaChart, 'select', 
-                        function () {
+                       
+                        function(){
 
+                            var temp = areaChart.getSelection()[0];
                             var selection = areaChart.getSelection();
-                            
-                            lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection);
-                            
-                            if(lineChart != undefined){
-                                lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection);
-                            }
-                            if(barChart != undefined){
-                                lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection);
-                            }
-                            if(steppedAreaChart != undefined){
-                                lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection);
-                            }
-                            if(columnChart != undefined){
-                                lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection);
-                            }
-                            if(comboChart != undefined){
-                                lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection);
-                            }
 
+                           
+
+                            if(temp.row != null && temp.column != null){
+
+
+                                changeColor(areaChart, areaData, areaOption, temp, "areaView");
+
+
+                                if(lineChart != undefined){
+                                    changeColor(lineChart, lineData, lineOption, temp, "lineView");
+                                }
+                                if(barChart != undefined){
+                                    changeColor(barChart, barData, barOption, temp, "barView");
+                                }
+                                if(steppedAreaChart != undefined){
+                                    changeColor(steppedAreaChart, steppedAreaData, steppedAreaOption, temp, "steppedAreaView");
+                                }
+                                 if(columnChart != undefined){
+                                    changeColor(columnChart, columnData, columnOption, temp, "columnView");
+                                }
+                                 if(comboChart != undefined){
+                                    changeColor(comboChart, comboData, comboOption, temp, "comboView");
+                                }
+
+                                if(areaCounter % 2 == 0){
+                                    selectHandler(areaChart, areaData, newOption1, newOption2, newName1, newName2, selection);
+                                }
+                            
+                            } else {
+
+                                lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
+
+                                if(lineChart != undefined){
+                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "lineView");
+                                }
+                                if(barChart != undefined){
+                                    lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
+                                }
+                                if(steppedAreaChart != undefined){
+                                    lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection, "steppedAreaView");
+                                    
+                                }
+                                if(columnChart != undefined){
+                                    lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");
+                                    
+                                }
+                                if(comboChart != undefined){
+                                    lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection, "comboView");
+                                }
+
+                            }
                         }
+                        
                     );
+
                 }
+
+
                 if(steppedAreaChart != undefined){
+
                     google.visualization.events.addListener(steppedAreaChart, 'select', 
-                        function () {
+                       
+                        function(){
 
+                            var temp = steppedAreaChart.getSelection()[0];
                             var selection = steppedAreaChart.getSelection();
-                            
-                            lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection);
-                            
-                            if(lineChart != undefined){
-                                lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection);
-                            }
-                            if(barChart != undefined){
-                                lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection);
-                            }
-                            if(areaChart != undefined){
-                                lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection);
-                            }
-                            if(columnChart != undefined){
-                                lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection);
-                            }
-                            if(comboChart != undefined){
-                                lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection);
-                            }
 
+                           
+
+                            if(temp.row != null && temp.column != null){
+
+
+                                changeColor(steppedAreaChart, steppedAreaData, steppedAreaOption, temp, "steppedAreaView");
+
+                                if(lineChart != undefined){
+                                    changeColor(lineChart, lineData, lineOption, temp, "lineView");
+                                }
+                                if(barChart != undefined){
+                                    changeColor(barChart, barData, barOption, temp, "barView");
+                                }
+                                if(areaChart != undefined){
+                                    changeColor(areaChart, areaData, areaOption, temp, "areaView");
+                                }
+                                if(columnChart != undefined){
+                                    changeColor(columnChart, columnData, columnOption, temp, "areaView");
+                                }
+                                 if(comboChart != undefined){
+                                    changeColor(comboChart, comboData, comboOption, temp, "areaView");
+                                }
+
+                                if(steppedAreaCounter % 2 == 0){
+                                    selectHandler(steppedAreaChart, steppedAreaData, newOption1, newOption2, newName1, newName2, selection);
+                                }
+                            
+                            } else {
+
+                                lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection, "steppedAreaView");
+
+                                if(lineChart != undefined){
+                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "lineView");  
+                                }
+                                if(barChart != undefined){
+                                    lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
+                                }
+                                if(areaChart != undefined){
+                                    lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
+                                }
+                                if(columnChart != undefined){
+                                    lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");
+                                    
+                                }
+                                if(comboChart != undefined){
+                                    lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection, "comboView");
+                                }
+
+                            }
                         }
+                        
                     );
+
                 }
+
+
                 if(columnChart != undefined){
+
                     google.visualization.events.addListener(columnChart, 'select', 
-                        function () {
+                       
+                        function(){
 
+                            var temp = columnChart.getSelection()[0];
                             var selection = columnChart.getSelection();
+
+
+                            if(temp.row != null && temp.column != null){
+
+
+                                changeColor(columnChart, columnData, columnOption, temp, "columnView");
+
+                                if(lineChart != undefined){
+                                    changeColor(lineChart, lineData, lineOption, temp, "lineView");
+                                }
+                                if(barChart != undefined){
+                                    changeColor(barChart, barData, barOption, temp, "barView");
+                                }
+                                if(areaChart != undefined){
+                                    changeColor(areaChart, areaData, areaOption, temp, "areaView");
+                                }
+                                 if(steppedAreaChart != undefined){
+                                    changeColor(steppedAreaChart, steppedAreaData, steppedAreaOption, temp, "steppedAreaView");
+                                }
+                                 if(comboChart != undefined){
+                                    changeColor(comboChart, comboData, comboOption, temp, "comboView");
+                                }
+                                if(columnCounter % 2 == 0){
+                                    selectHandler(columnChart, columnData, newOption1, newOption2, newName1, newName2, selection);
+                                }
                             
-                            lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection);
+                            } else {
 
-                            if(lineChart != undefined){
-                                lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection);
-                            }
-                            if(barChart != undefined){
-                                lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection);
-                            }
-                            if(steppedAreaChart != undefined){
-                                lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection);
-                            }
-                            if(areaChart != undefined){
-                                lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection);
-                            }
-                            if(comboChart != undefined){
-                                lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection);
-                            }
+                                lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");
 
+                                if(lineChart != undefined){
+                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "linneView");      
+                                }
+                                if(barChart != undefined){
+                                    lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
+                                }
+                                if(areaChart != undefined){
+
+                                    lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
+                                }
+                                if(steppedAreaChart != undefined){
+                                    lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection, "steppedAreaView");
+                                }
+                                if(comboChart != undefined){
+                                    lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection, "comboView");
+                                }
+
+                            }
                         }
+                        
                     );
+
                 }
-                if(comboChart != undefined){
+
+
+                 if(comboChart != undefined){
+
                     google.visualization.events.addListener(comboChart, 'select', 
-                        function () {
+                       
+                        function(){
 
+                            var temp = comboChart.getSelection()[0];
                             var selection = comboChart.getSelection();
-                            
-                             lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection);
 
-                            if(lineChart != undefined){
-                                lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection);
-                            }
-                            if(barChart != undefined){
-                                lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection);
-                            }
-                            if(steppedAreaChart != undefined){
-                                lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection);
-                            }
-                            if(areaChart != undefined){
-                                lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection);
-                            }
-                            if(columnChart != undefined){
-                                lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection);
+                           
+
+                            if(temp.row != null && temp.column != null){
+
+                                changeColor(comboChart, comboData, comboOption, temp, "comboView");
+
+                                if(lineChart != undefined){
+                                    changeColor(lineChart, lineData, lineOption, temp, "lineView");
+                                }
+                                if(barChart != undefined){
+                                    changeColor(barChart, barData, barOption, temp, "barView");
+                                }
+                                if(areaChart != undefined){
+                                    changeColor(areaChart, areaData, areaOption, temp, "areaView");
+                                }
+                                 if(steppedAreaChart != undefined){
+                                    changeColor(steppedAreaChart, steppedAreaData, steppedAreaOption, temp, "steppedAreaView");
+                                }
+                                 if(columnChart != undefined){
+                                    changeColor(columnChart, columnData, columnOption, temp, "columnView");
+                                }
+
+                                if(comboCounter % 2 == 0){
+                                    selectHandler(comboChart, comboData, newOption1, newOption2, newName1, newName2, selection);
+                                }
+                            
+                            } else {
+
+                                lineDisappear(comboChart, comboData, comboOption, comboColumns, comboSeries, selection, "comboView");
+
+                                if(lineChart != undefined){  
+                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "lineView");
+                                }
+                                if(barChart != undefined){
+                                    lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
+                                }
+                                if(areaChart != undefined){
+
+                                    lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
+                                }
+                                if(steppedAreaChart != undefined){
+                                    lineDisappear(steppedAreaChart, steppedAreaData, steppedAreaOption, steppedAreaColumns, steppedAreaSeries, selection, "steppedAreaView");
+                                }
+                                if(columnChart != undefined){
+                                    lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");      
+                                }
+
                             }
                         }
+                        
                     );
+
                 }
-
-
 
 
 
@@ -618,7 +746,371 @@
         }
 
 
-    
+        function changeColor(chart, data, option, selectedItem, name){
+
+            var temp = selectedItem;
+
+            if(name == "lineView"){
+
+                chart.draw(lineView, option);
+
+
+                if(lineCounter % 2 == 1){
+                    var index = temp.column - 1;
+
+                    for(var i in option.colors){
+                        if(i != index){
+                            option.colors[i] = 'black';
+                        }
+                    }
+
+                } else {
+
+                    for(var i in option.colors){ 
+                        option.colors[i] = colorArray[i];
+                    }
+
+                }
+
+                chart.draw(lineView, option);
+
+                lineCounter++;
+            }
+
+
+            if(name == "barView"){
+
+                if(barCounter % 2 == 1){
+                    var index = temp.column - 1;
+
+                    for(var i in option.colors){
+                        if(i != index){
+                            option.colors[i] = 'black';
+                        }
+                    }
+
+                } else {
+
+                    for(var i in option.colors){ 
+                        option.colors[i] = colorArray[i];
+                    }
+
+                }
+
+
+                chart.draw(barView, option);
+
+                barCounter++;
+            }
+
+
+
+            if(name == "areaView"){
+
+                if(areaCounter % 2 == 1){
+                    var index = temp.column - 1;
+
+                    for(var i in option.colors){
+                        if(i != index){
+                            option.colors[i] = 'black';
+                        }
+                    }
+
+                } else {
+
+                    for(var i in option.colors){ 
+                        option.colors[i] = colorArray[i];
+                    }
+
+                }
+
+
+                chart.draw(areaView, option);
+
+                areaCounter++;
+            }
+
+
+            if(name == "steppedAreaView"){
+
+                if(steppedAreaCounter % 2 == 1){
+                    var index = temp.column - 1;
+
+                    for(var i in option.colors){
+                        if(i != index){
+                            option.colors[i] = 'black';
+                        }
+                    }
+
+                } else {
+
+                    for(var i in option.colors){ 
+                        option.colors[i] = colorArray[i];
+                    }
+
+                }
+
+
+                chart.draw(steppedAreaView, option);
+
+                steppedAreaCounter++;
+            }
+
+
+            if(name == "columnView"){
+
+                if(columnCounter % 2 == 1){
+                    var index = temp.column - 1;
+
+                    for(var i in option.colors){
+                        if(i != index){
+                            option.colors[i] = 'black';
+                        }
+                    }
+
+                } else {
+
+                    for(var i in option.colors){ 
+                        option.colors[i] = colorArray[i];
+                    }
+
+                }
+
+
+                chart.draw(columnView, option);
+
+                columnCounter++;
+            }
+
+
+
+            if(name == "comboView"){
+
+                if(comboCounter % 2 == 1){
+                    var index = temp.column - 1;
+
+                    for(var i in option.colors){
+                        if(i != index){
+                            option.colors[i] = 'black';
+                        }
+                    }
+
+                } else {
+
+                    for(var i in option.colors){ 
+                        option.colors[i] = colorArray[i];
+                    }
+
+                }
+
+
+                chart.draw(comboView, option);
+
+                comboCounter++;
+            }
+
+
+        }
+
+
+
+        function lineDisappear(chart, data, options, columns, series, selection, name){
+            
+            // var sel = chart.getSelection();
+            var sel = selection;
+
+                // if selection length is 0, we deselected an element
+
+                if (sel.length > 0) {
+
+                    // if row is undefined, we clicked on the legend
+                    if (sel[0].row === null) {
+                    var col = sel[0].column;
+                    if (columns[col] == col) {
+                        // hide the data series
+                        columns[col] = {
+                            label: data.getColumnLabel(col),
+                            type: data.getColumnType(col),
+                            calc: function () {
+                                return null;
+                            }
+                        };
+
+                        // grey out the legend entry
+                        series[col - 1].color = '#CCCCCC';
+                    } else {
+                        // show the data series
+                        columns[col] = col;
+                        series[col - 1].color = null;
+                    }
+
+                    // var view = new google.visualization.DataView(data);
+                    // view.setColumns(columns);
+
+                    // chart.draw(view, options);
+
+                    if(name == "lineView"){
+                        lineView = new google.visualization.DataView(data);
+                        lineView.setColumns(columns);
+
+                        chart.draw(lineView, options);
+                    }
+
+                    if(name == "barView"){
+                        barView = new google.visualization.DataView(data);
+                        barView.setColumns(columns);
+
+                        chart.draw(barView, options);
+                    }
+
+                    if(name == "areaView"){
+                        areaView = new google.visualization.DataView(data);
+                        areaView.setColumns(columns);
+
+                        chart.draw(areaView, options);
+                    }
+
+                    if(name == "steppedAreaView"){
+                        steppedAreaView = new google.visualization.DataView(data);
+                        steppedAreaView.setColumns(columns);
+
+                        chart.draw(steppedAreaView, options);
+                    }
+
+                    if(name == "columnView"){
+                        columnView = new google.visualization.DataView(data);
+                        columnView.setColumns(columns);
+
+                        chart.draw(columnView, options);
+                    }
+
+                    if(name == "comboView"){
+                        comboView = new google.visualization.DataView(data);
+                        comboView.setColumns(columns);
+
+                        chart.draw(comboView, options);
+                    }
+
+
+                    }
+
+                } else {
+                    console.log("sel is empty");
+                }
+
+        }
+
+
+
+
+        function selectHandler(chart, data, option1, option2, name1, name2, select){
+
+                var columnNumber;
+
+                // var selection = chart.getSelection();
+                var selection = select;
+
+
+                var message = '';
+                for(var i = 0; i < selection.length; i++){
+                    var item = selection[i];
+
+
+                    if (item.row != null && item.column != null) {
+                        // str stores the number of nodes
+
+                        var str = data.getFormattedValue(item.row, item.column);
+
+                        // row number is correct, but column need to be minus 1
+                        // name1 for row, name2 for column
+                        var property1 = name1[item.row];
+                        var property2 = name2[item.column - 1];
+                      
+
+                        message += '{row:' + item.row + ',column:' + item.column + '} = ' + str + '\n';
+
+                        columnNumber = item.column;
+
+
+                        socket.emit('crossLinking', option1, option2, property1, property2);
+
+                    } else if (item.row != null) {
+                        // var str = data.getFormattedValue(item.row, 0);
+                        // message += '{row:' + item.row + ', column:none}; value (col 0) = ' + str + '\n';
+
+                        // alert("You have to click on a node");
+
+
+
+                        // alert("You selected a row but no column");
+
+
+
+                    } else if (item.column != null) {
+                        // var str = data.getFormattedValue(0, item.column);
+                        // message += '{row:none, column:' + item.column + '}; value (row 0) = ' + str + '\n';
+
+                        // alert("You have to click on a node");
+
+
+                        // alert("You selected a column but no row");
+
+
+                    }
+                   
+                    if(message != ''){
+                        // alert('You selected ' + message);
+                    }
+                }
+
+
+                // If you want to change the node color, you have to change them here.
+                // So you must seed the arrary of relative nodes back here;
+                socket.on('changeNodes', function(resultArray){
+                    
+                    countTotalNodes = 0;
+                    nodeArray = resultArray;
+                    // displayFunction(content);
+                    testFunction(nodeArray, columnNumber);
+                    
+                });
+
+            } // end of selectLineChartHandler function
+
+
+
+        function testFunction(data, columnNum) {
+
+
+            var tempArray = data;
+            mainGraph.nodeColor(
+
+
+                // ----------  working ----------
+                nodeapp => {
+                    
+                    for(var i = 0; i < tempArray.length; i++){
+                        if(nodeapp.id == tempArray[i]){
+                            // return "white";
+
+                            // console.log(colorArray[columnNum - 1]);
+
+                            return colorArray[columnNum - 1];
+
+                            // return colorArray[columnNum];
+                        }
+                    }
+
+                    // return colorNames[Math.floor(Math.random() * 6)];
+                    return "black";
+                }
+
+
+            );
+
+        }
+
+     
 
         function drawLineChart(option1, option2, name1, name2, tempValues) {
 
@@ -642,10 +1134,24 @@
                 for(var j = 0; j < tempValues[i].length; j++){
                     ttt.push(tempValues[i][j]);
                 }
+
                 tempRows.push(ttt);
             }
 
+
             lineData.addRows(tempRows);
+
+
+
+            // ----- Assign view here ------
+            lineView = lineData;
+            // ----- Assign view here ------
+
+
+
+            // console.log("The lineData in the draw function is");
+            // console.log(lineData);
+
 
             var options = {
                 // focusTarget: 'category',
@@ -670,6 +1176,7 @@
                 // width: 1000,
                 // height: 500,
 
+               
 
                 hAxis: {
                     format: '',
@@ -712,6 +1219,7 @@
                 }
                 
             };
+
 
             document.getElementById("chart1").style.height = '500px';
             // document.getElementById("chart1").style.backgroundColor = "red";
@@ -792,199 +1300,6 @@
         } // end of the drawLineChart function 
 
 
-
-
-
-        function prototype(options){
-            for(var i = 0; i < listCharts.length; i++){
-                if(listCharts[i] != 0){
-                    // if(listCharts[i] == "lineChart"){
-                    //     console.log("You come here for line chart");
-                    //     console.log("For the lineChart, The options is");
-                    //     console.log(options);
-                    //     lineDisappear(lineChart, lineData, options, lineColumns, lineSeries);
-                    // }
-                    // if(listCharts[i] == "barChart"){
-                    //     console.log("You come here for bar chart");
-                    //     console.log("For the barChart, The options is");
-                    //     console.log(options);
-                    //     lineDisappear(barChart, barData, options, barColumns, barSeries);
-                    // }
-
-                    console.log("The listCharts[i] is");
-                    console.log(listCharts[i]);
-                    console.log("i is");
-                    console.log(i);
-
-                    lineDisappear(listCharts[i], listDatas[i], options, listColumns[i], listSeries[i]);
-
-                    for(var j = 0; j < listCharts.length; j++){
-
-                        if(j != i && listCharts[j] != 0){
-                            console.log("j is");
-                            console.log(j);
-                            console.log(listCharts[j]);
-                            google.visualization.events.addListener(listCharts[j], 'select', 
-                                function () {
-                                    lineDisappear(listCharts[j], listDatas[j], options, listColumns[j], listSeries[j]);
-                            });
-                        }
-                    }
-                    break;
-                }
-            }
-        }
-
-
-
-
-        function lineDisappear(chart, data, options, columns, series, selection){
-            
-            // var sel = chart.getSelection();
-            var sel = selection;
-
-                // if selection length is 0, we deselected an element
-
-                if (sel.length > 0) {
-
-                    // if row is undefined, we clicked on the legend
-                    if (sel[0].row === null) {
-                    var col = sel[0].column;
-                    if (columns[col] == col) {
-                        // hide the data series
-                        columns[col] = {
-                            label: data.getColumnLabel(col),
-                            type: data.getColumnType(col),
-                            calc: function () {
-                                return null;
-                            }
-                        };
-
-                        // grey out the legend entry
-                        series[col - 1].color = '#CCCCCC';
-                    } else {
-                        // show the data series
-                        columns[col] = col;
-                        series[col - 1].color = null;
-                    }
-                    var view = new google.visualization.DataView(data);
-                    view.setColumns(columns);
-                    chart.draw(view, options);
-                    }
-
-                } else {
-                    console.log("sel is empty");
-                }
-
-        }
-
-
-
-
-        function selectHandler(chart, data, option1, option2, name1, name2, select){
-                
-                var columnNumber;
-
-                // var selection = chart.getSelection();
-                var selection = select;
-
-
-                var message = '';
-                for(var i = 0; i < selection.length; i++){
-                    var item = selection[i];
-
-
-                    if (item.row != null && item.column != null) {
-                        // str stores the number of nodes
-
-                        var str = data.getFormattedValue(item.row, item.column);
-
-                        // row number is correct, but column need to be minus 1
-                        // name1 for row, name2 for column
-                        var property1 = name1[item.row];
-                        var property2 = name2[item.column - 1];
-                      
-
-                        message += '{row:' + item.row + ',column:' + item.column + '} = ' + str + '\n';
-
-                        columnNumber = item.column;
-
-
-                        socket.emit('crossLinking', option1, option2, property1, property2);
-
-                    } else if (item.row != null) {
-                        // var str = data.getFormattedValue(item.row, 0);
-                        // message += '{row:' + item.row + ', column:none}; value (col 0) = ' + str + '\n';
-
-                        // alert("You have to click on a node");
-
-
-
-                        // alert("You selected a row but no column");
-
-
-
-                    } else if (item.column != null) {
-                        // var str = data.getFormattedValue(0, item.column);
-                        // message += '{row:none, column:' + item.column + '}; value (row 0) = ' + str + '\n';
-
-                        // alert("You have to click on a node");
-
-
-                        // alert("You selected a column but no row");
-
-
-                    }
-                   
-                    if(message != ''){
-                        // alert('You selected ' + message);
-                    }
-                }
-
-
-                // If you want to change the node color, you have to change them here.
-                // So you must seed the arrary of relative nodes back here;
-                socket.on('changeNodes', function(resultArray){
-                    
-                    countTotalNodes = 0;
-                    nodeArray = resultArray;
-                    // displayFunction(content);
-                    testFunction(nodeArray, columnNumber);
-                    
-                });
-
-            } // end of selectLineChartHandler function
-
-
-
-        function testFunction(data, columnNum) {
-
-            var tempArray = data;
-            mainGraph.nodeColor(
-
-
-                // ----------  working ----------
-                nodeapp => {
-                    
-                    for(var i = 0; i < tempArray.length; i++){
-                        if(nodeapp.id == tempArray[i]){
-                            // return "white";
-                            return colorArray[columnNum - 1];
-                        }
-                    }
-
-                    // return colorNames[Math.floor(Math.random() * 6)];
-                    return "black";
-                }
-
-
-            );
-
-        }
-
-     
-
-
         function drawBarChart(option1, option2, name1, name2, tempValues){
             var arr = [];
             var temp1 = [];
@@ -1007,6 +1322,14 @@
 
 
             barData = google.visualization.arrayToDataTable(arr);
+
+
+
+            // ----- added the view ------
+            barView = barData;
+            // ------ added the view -----
+
+
 
             var options = {
                 colors:['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'gold', 'dark green', 'LightSalmon', 'MediumPurple', 'OrangeRed', 'SpringGreen', 'YellowGreen'],
@@ -1133,6 +1456,9 @@
              areaData = google.visualization.arrayToDataTable(temp);
 
 
+             areaView = areaData;
+
+
             var options = {
                 colors:['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'gold', 'dark green', 'LightSalmon', 'MediumPurple', 'OrangeRed', 'SpringGreen', 'YellowGreen'],
 
@@ -1245,6 +1571,9 @@
             steppedAreaData = google.visualization.arrayToDataTable(temp);
 
 
+            steppedAreaView = steppedAreaData;
+
+
             var options = {
                 colors:['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'gold', 'dark green', 'LightSalmon', 'MediumPurple', 'OrangeRed', 'SpringGreen', 'YellowGreen'],
 
@@ -1349,6 +1678,11 @@
             }
 
             columnData = google.visualization.arrayToDataTable(temp);
+
+
+
+            columnView = columnData;
+
 
 
             var options = {
@@ -1462,6 +1796,11 @@
             }
 
             comboData = google.visualization.arrayToDataTable(temp);
+
+
+
+            comboView = comboData;
+
 
 
             var options = {
