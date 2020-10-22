@@ -13,31 +13,6 @@ If you see listening on localhost:3000, that means the program runs fine. Go to 
 
 
 
-// -------------- Note for the error ----------------------
-If you encouter the following error, try to do node app.js again, sometime you need to do it multiple times and the 
-error will go away. 
-This error doesn't always pop up, it pops up casually, so it is difficult to debug. When it doesn't pop up, the program runs just fine.
-The error occurs because the max variable in the app.js file is 0, the only reason for it to be 0 is because it didn't get asisgn a value in the 
-fs.readFile("blocks.json", function(err, data) function. However, the only reason it didn't get assign a value is because this function fails to read the file.
-But this function never throw any errors, and this below error doesn't alwasy show up, so it is difficult to debug.
-// ---------- 
-We have an undefined value
-arrLinks[parseInt(tempLinks[i].target)] is undefined
-The max value is 0
-arrLinks[] is undefined
-/Users/tianrongzhen/Desktop/future/server/app.js:192
-          arrLinks[parseInt(tempLinks[i].source)].push(parseInt(tempLinks[i].target));
-                                                  ^
-
-TypeError: Cannot read property 'push' of undefined
-    at /Users/tianrongzhen/Desktop/future/server/app.js:192:51
-    at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
-// -----------
-// -------------- End of Note for the error ----------------------
-
-
-
-
 // --------------  Note for the node styling ----------------
 For the node styling functionality:
 SetNodeSize: You have to enter a positive integer number input.
