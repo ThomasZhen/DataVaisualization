@@ -1,0 +1,262 @@
+0 birthday;anonymized feature 1172, 1/2/2010
+1 birthday;anonymized feature 208, 1/2/200
+2 birthday;anonymized feature 0, 1/3/1998
+3 birthday;anonymized feature 1, 1/5/1996
+4 birthday;anonymized feature 209, 1/6/1995
+5 birthday;anonymized feature 2, 1/7/1997
+6 birthday;anonymized feature 3, 1/10/1980
+7 birthday;anonymized feature 6, 2/1/1970
+8 education;concentration;id;anonymized feature 1173, computer science
+9 education;concentration;id;anonymized feature 13, bussiness
+10 education;concentration;id;anonymized feature 384, marketing
+11 education;concentration;id;anonymized feature 386, nursing
+12 education;concentration;id;anonymized feature 14, computer science
+13 education;concentration;id;anonymized feature 1009, bussiness
+14 education;concentration;id;anonymized feature 388, marketing
+15 education;concentration;id;anonymized feature 15, nursing
+16 education;concentration;id;anonymized feature 389, mathamatics
+17 education;concentration;id;anonymized feature 1174, physics
+18 education;concentration;id;anonymized feature 338, biology
+19 education;concentration;id;anonymized feature 392, business
+20 education;concentration;id;anonymized feature 215, computer science
+21 education;concentration;id;anonymized feature 1175, marketing
+22 education;concentration;id;anonymized feature 1176, business
+23 education;concentration;id;anonymized feature 395, computer science
+24 education;concentration;id;anonymized feature 397, biology
+25 education;concentration;id;anonymized feature 216, physics
+26 education;concentration;id;anonymized feature 1177, nursing
+27 education;concentration;id;anonymized feature 1178, computer science
+28 education;concentration;id;anonymized feature 1179, nursing
+29 education;concentration;id;anonymized feature 18, business
+30 education;concentration;id;anonymized feature 1012, marketing
+31 education;concentration;id;anonymized feature 1180, nursing
+32 education;concentration;id;anonymized feature 1181, marketing
+33 education;degree;id;anonymized feature 21, Public
+34 education;degree;id;anonymized feature 1182, Private
+35 education;degree;id;anonymized feature 22, Online
+36 education;degree;id;anonymized feature 1183, Public
+37 education;degree;id;anonymized feature 23, Private
+38 education;degree;id;anonymized feature 1184, Online
+39 education;degree;id;anonymized feature 223, Public
+40 education;degree;id;anonymized feature 224, Private
+41 education;degree;id;anonymized feature 437, Online
+42 education;school;id;anonymized feature 225, UC Berkeley
+43 education;school;id;anonymized feature 1185, UC Los Angel
+44 education;school;id;anonymized feature 443, Harvard University
+45 education;school;id;anonymized feature 1186, Standford University
+46 education;school;id;anonymized feature 451, University of New York
+47 education;school;id;anonymized feature 341, UC Berkeley
+48 education;school;id;anonymized feature 315, UC Los Angel
+49 education;school;id;anonymized feature 1187, Harvard university
+50 education;school;id;anonymized feature 1188, Stanford University
+51 education;school;id;anonymized feature 1189, Princeton University
+52 education;school;id;anonymized feature 1190, Harvard University
+53 education;school;id;anonymized feature 1191, Columbia University
+54 education;school;id;anonymized feature 1192, Yale University
+55 education;school;id;anonymized feature 1193, University of Chicago
+56 education;school;id;anonymized feature 236, University of Pennsylvania
+57 education;school;id;anonymized feature 1194, Johns Hopkins University
+58 education;school;id;anonymized feature 1195, Northwestern University
+59 education;school;id;anonymized feature 1196, Duke University
+60 education;school;id;anonymized feature 1197, Dartmouth College
+61 education;school;id;anonymized feature 1198, Brown University
+62 education;school;id;anonymized feature 1199, Vanderbilt University
+63 education;school;id;anonymized feature 44, Rice University
+64 education;school;id;anonymized feature 1200, Cornell University
+65 education;school;id;anonymized feature 1201, Emory University
+66 education;school;id;anonymized feature 1202, Georgetown University
+67 education;school;id;anonymized feature 1203, Carnegie Mellon University
+68 education;school;id;anonymized feature 1204, University of Virginia
+69 education;school;id;anonymized feature 1205, Wake Forest university
+70 education;school;id;anonymized feature 1206, New York University
+71 education;school;id;anonymized feature 1207, Tufts University
+72 education;school;id;anonymized feature 1208, University of Florida
+73 education;school;id;anonymized feature 861, University of Rochester
+74 education;school;id;anonymized feature 246, Boston College
+75 education;school;id;anonymized feature 50, Tulane University
+76 education;school;id;anonymized feature 535, Boston University
+77 education;school;id;anonymized feature 1209, Brandeis Univeristy
+78 education;school;id;anonymized feature 52, University of Georgia
+79 education;school;id;anonymized feature 537, Lehigh University
+80 education;school;id;anonymized feature 538, Northeastern University
+81 education;school;id;anonymized feature 1210, Pepperdine University
+82 education;type;anonymized feature 53, Public
+83 education;type;anonymized feature 54, Private
+84 education;type;anonymized feature 55, Online
+85 education;with;id;anonymized feature 1211, Books
+86 education;with;id;anonymized feature 1212, Computers
+87 education;year;id;anonymized feature 58, 2012
+88 education;year;id;anonymized feature 253, 2016
+89 education;year;id;anonymized feature 59, 2013
+90 education;year;id;anonymized feature 254, 2014
+91 education;year;id;anonymized feature 255, 2015
+92 education;year;id;anonymized feature 60, 2013
+93 education;year;id;anonymized feature 61, 2016
+94 education;year;id;anonymized feature 62, 2017
+95 education;year;id;anonymized feature 63, 2009
+96 education;year;id;anonymized feature 64, 2008
+97 education;year;id;anonymized feature 65, 2015
+98 education;year;id;anonymized feature 66, 2006
+99 education;year;id;anonymized feature 67, 2005
+100 education;year;id;anonymized feature 68, 2004
+101 education;year;id;anonymized feature 69, 2003
+102 education;year;id;anonymized feature 257, 2002
+103 education;year;id;anonymized feature 258, 2001
+104 education;year;id;anonymized feature 71, 2000
+105 education;year;id;anonymized feature 259, 1998
+106 education;year;id;anonymized feature 72, 2008
+107 first_name;anonymized feature 545, John
+108 first_name;anonymized feature 1065, Michael
+109 first_name;anonymized feature 1213, Thomas
+110 first_name;anonymized feature 546, Jefferson
+111 first_name;anonymized feature 1214, Robert
+112 first_name;anonymized feature 1215, William
+113 first_name;anonymized feature 1216, David
+114 first_name;anonymized feature 1217, Richard
+115 first_name;anonymized feature 1218, Joseph
+116 first_name;anonymized feature 1079, Daniel
+117 gender;anonymized feature 77, Male
+118 gender;anonymized feature 78, Female
+119 hometown;id;anonymized feature 1219, San Francisco
+120 hometown;id;anonymized feature 82,  Los Angel
+121 hometown;id;anonymized feature 1220, Riverside
+122 hometown;id;anonymized feature 86, San Mateo
+123 hometown;id;anonymized feature 283, San Jose
+124 hometown;id;anonymized feature 297, San Francisco
+125 hometown;id;anonymized feature 1221, Los Angel
+126 hometown;id;anonymized feature 618, Riverside
+127 hometown;id;anonymized feature 1222, San Mateo
+128 hometown;id;anonymized feature 1223, San Jose
+129 hometown;id;anonymized feature 619, Los Angel
+130 languages;id;anonymized feature 90, English
+131 languages;id;anonymized feature 91, Chinese
+132 languages;id;anonymized feature 92, French
+133 languages;id;anonymized feature 1224, English
+134 languages;id;anonymized feature 913, Chinese
+135 languages;id;anonymized feature 94, Japanese
+136 languages;id;anonymized feature 572, Korean
+137 languages;id;anonymized feature 1225, English
+138 languages;id;anonymized feature 573, Chinese
+139 languages;id;anonymized feature 97, French
+140 languages;id;anonymized feature 100, German
+141 languages;id;anonymized feature 103, French
+142 last_name;anonymized feature 1226, James
+143 last_name;anonymized feature 1227, John
+144 last_name;anonymized feature 1228, Robert
+145 last_name;anonymized feature 1229, Michael
+146 last_name;anonymized feature 106, William
+147 last_name;anonymized feature 578, David
+148 last_name;anonymized feature 1230, Richard
+149 last_name;anonymized feature 1231, Joseph
+150 last_name;anonymized feature 1232, Thomas
+151 last_name;anonymized feature 1233, Charles
+152 last_name;anonymized feature 581, Daniel
+153 last_name;anonymized feature 1234, Matthew
+154 last_name;anonymized feature 582, James
+155 last_name;anonymized feature 1115, John
+156 last_name;anonymized feature 1235, Robert
+157 last_name;anonymized feature 1236, Michael
+158 last_name;anonymized feature 593, William
+159 last_name;anonymized feature 1237, David
+160 last_name;anonymized feature 595, Richard
+161 last_name;anonymized feature 1238, Joseph
+162 last_name;anonymized feature 1239, Thomas
+163 last_name;anonymized feature 1240, Charles
+164 last_name;anonymized feature 1241, Daniel
+165 last_name;anonymized feature 1242, Anthony
+166 last_name;anonymized feature 1243, John
+167 last_name;anonymized feature 1244, Robert
+168 last_name;anonymized feature 602, William
+169 last_name;anonymized feature 1139, David
+170 last_name;anonymized feature 1245, Joseph
+171 last_name;anonymized feature 1246, Charles
+172 locale;anonymized feature 126, 5th street
+173 locale;anonymized feature 127, dinning hall
+174 locale;anonymized feature 1247, bathroom
+175 locale;anonymized feature 1248, mall room
+176 locale;anonymized feature 1249, living room
+177 location;id;anonymized feature 128, Central park
+178 location;id;anonymized feature 1250, Pier 39
+179 location;id;anonymized feature 129, Mountain top park
+180 location;id;anonymized feature 296, Market street
+181 location;id;anonymized feature 174, San Francisco
+182 location;id;anonymized feature 1251, Los Angel
+183 location;id;anonymized feature 613, Central park
+184 location;id;anonymized feature 281, Pier 39
+185 location;id;anonymized feature 176, Mountain top park
+186 location;id;anonymized feature 179, Market street
+187 location;id;anonymized feature 616, Central park
+188 location;id;anonymized feature 297, Pier 39
+189 location;id;anonymized feature 1252, San Francisco
+190 location;id;anonymized feature 1223, Los Angel
+191 location;id;anonymized feature 619, Pier 39
+192 location;id;anonymized feature 138, Central park
+193 name;anonymized feature 1253, Jefferson
+194 work;employer;id;anonymized feature 140, H&M
+195 work;employer;id;anonymized feature 1156, Burger King 
+196 work;employer;id;anonymized feature 1254, Mcdonald's
+197 work;employer;id;anonymized feature 1255, H&M
+198 work;employer;id;anonymized feature 1256, Burger King
+199 work;employer;id;anonymized feature 1257, Mcdonald's
+200 work;employer;id;anonymized feature 1258, H&M
+201 work;employer;id;anonymized feature 150, Burger King
+202 work;employer;id;anonymized feature 151, Mcdonald's
+203 work;employer;id;anonymized feature 1259, H&M
+204 work;employer;id;anonymized feature 667, Burger King
+205 work;employer;id;anonymized feature 52, Mcdonald's
+206 work;employer;id;anonymized feature 154, H&M
+207 work;employer;id;anonymized feature 537, Burger King
+208 work;employer;id;anonymized feature 1210, H&M
+209 work;end_date;anonymized feature 157, 1/2/2000
+210 work;end_date;anonymized feature 672, 1/2/2001
+211 work;end_date;anonymized feature 718, 1/4/2002
+212 work;end_date;anonymized feature 1260, 1/5/2010
+213 work;end_date;anonymized feature 676, 8/9/2008
+214 work;end_date;anonymized feature 720, 7/4/2013
+215 work;end_date;anonymized feature 722, 1/6/2009
+216 work;end_date;anonymized feature 976, 1/8/2008
+217 work;end_date;anonymized feature 723, 1/9/2005
+218 work;end_date;anonymized feature 198, 2/3/2001
+219 work;end_date;anonymized feature 199, 1/4/2007
+220 work;end_date;anonymized feature 165, 5/6/2003
+221 work;end_date;anonymized feature 166, 5/6/2002
+222 work;end_date;anonymized feature 200, 5/6/2006
+223 work;end_date;anonymized feature 201, 7/1/2001
+224 work;end_date;anonymized feature 169, 8/1/2009
+225 work;location;id;anonymized feature 128, San Francisco
+226 work;location;id;anonymized feature 129, Los Angel
+227 work;location;id;anonymized feature 296, San Mateo
+228 work;location;id;anonymized feature 174, San Jose
+229 work;location;id;anonymized feature 133, Oakland
+230 work;location;id;anonymized feature 176, San Francisco
+231 work;location;id;anonymized feature 177, Los Angel
+232 work;location;id;anonymized feature 1220, San Mateo
+233 work;location;id;anonymized feature 179, San Jose
+234 work;location;id;anonymized feature 283, Oakland
+235 work;location;id;anonymized feature 284, San Francisco
+236 work;location;id;anonymized feature 619, Los Angel
+237 work;location;id;anonymized feature 138, San Mateo
+238 work;position;id;anonymized feature 1261, cashier
+239 work;position;id;anonymized feature 1262, teller
+240 work;position;id;anonymized feature 1263, advertiser
+241 work;position;id;anonymized feature 183, supervisor
+242 work;position;id;anonymized feature 691, cashier
+243 work;position;id;anonymized feature 1264, teller
+244 work;position;id;anonymized feature 299, supervisor
+245 work;position;id;anonymized feature 1265, advertiser
+246 work;position;id;anonymized feature 1266, cashier
+247 work;start_date;anonymized feature 157, 1/7/2012
+248 work;start_date;anonymized feature 1267, 1/5/2013
+249 work;start_date;anonymized feature 713, 1/6/2010
+250 work;start_date;anonymized feature 1268, 1/9/2009
+251 work;start_date;anonymized feature 194, 2/6/2008
+252 work;start_date;anonymized feature 1269, 4/1/2005
+253 work;start_date;anonymized feature 375, 5/6/2009
+254 work;start_date;anonymized feature 675, 7/6/2007
+255 work;start_date;anonymized feature 310, 8/1/2003
+256 work;start_date;anonymized feature 158, 3/1/2001
+257 work;start_date;anonymized feature 162, 2/1/2003
+258 work;start_date;anonymized feature 723, 5/1/2005
+259 work;start_date;anonymized feature 198, 6/1/2009
+260 work;start_date;anonymized feature 199, 9/1/2008
+261 work;start_date;anonymized feature 725, 7/4/2004
