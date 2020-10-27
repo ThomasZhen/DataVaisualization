@@ -13,12 +13,28 @@ If you see listening on localhost:3000, that means the program runs fine. Go to 
 
 
 
+
+
+// --------------- Note for how to change dataset ---------------------
+There are few dataset folders. In each folder, there are five files: blocks.json, circles.txt, edges.txt, feat.txt, featnames.txt
+Initially, there are these five files in the home directory(the directory where the app.js file is located). These five files belong to the dataset 3980 folder
+When you want to change to a new dataset, you have to first drag the five files in the home directory to the dataset 3980 folder,
+Then open any one of the dataset folders and then drag the five files to the home directory. 
+
+Just rememeber to put the five files back to the dataset folder that they come from before changing to another dataset.
+// --------------- End of Note for how to change dataset
+
+
+
+
+
 // --------------  Note for the node styling ----------------
 For the node styling functionality:
 SetNodeSize: You have to enter a positive integer number input.
 SetNodeVisibility: Type true or false in the input bar.
 SetNodeColor: You have to enter a color name
 // --------------  End of Note for the node styling ----------------
+
 
 
 
@@ -38,6 +54,8 @@ SetLinkDirectionalParticleSpeed: You have to enter a floating number between 0.0
 SetLinkDirectionalParticleWidth: You have to enter an integer value
 SetLinkDirectionalParticleColor: You have to enter a color name
 // -------------  End of Note for link styling -----------------
+
+
 
 
 
