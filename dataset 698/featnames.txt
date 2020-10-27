@@ -1,0 +1,48 @@
+0 birthday;anonymized feature 2, 1/2/2001
+1 birthday;anonymized feature 3, 1/2/2001
+2 education;classes;id;anonymized feature 335, introduction to Java
+3 education;classes;id;anonymized feature 336, business101
+4 education;concentration;id;anonymized feature 14, conputer science
+5 education;degree;id;anonymized feature 22, Bechelor's degree
+6 education;school;id;anonymized feature 340, Harvard University
+7 education;school;id;anonymized feature 341, University of California, Berkeley 
+8 education;school;id;anonymized feature 369, University of California, Los Angel
+9 education;school;id;anonymized feature 342, San Francisco State University
+10 education;school;id;anonymized feature 370, University of California, Berkeley 
+11 education;school;id;anonymized feature 348, University of California, Los Angel
+12 education;type;anonymized feature 53, Private
+13 education;type;anonymized feature 54, Public
+14 education;type;anonymized feature 55, Online
+15 education;with;id;anonymized feature 350, Book
+16 education;year;id;anonymized feature 59, 2011
+17 education;year;id;anonymized feature 255, 2011
+18 education;year;id;anonymized feature 60, 2012
+19 education;year;id;anonymized feature 61, 2015
+20 education;year;id;anonymized feature 64, 2000
+21 education;year;id;anonymized feature 71, 2017
+22 education;year;id;anonymized feature 259, 2016
+23 education;year;id;anonymized feature 72, 2013
+24 first_name;anonymized feature 355, Michael
+25 first_name;anonymized feature 356, Jefferson
+26 gender;anonymized feature 77, Male
+27 gender;anonymized feature 78, Female
+28 hometown;id;anonymized feature 359, San Francisco
+29 hometown;id;anonymized feature 366, Los Angel
+30 languages;id;anonymized feature 92, English
+31 last_name;anonymized feature 371, Anderson
+32 last_name;anonymized feature 365, John
+33 locale;anonymized feature 126, Downtown
+34 locale;anonymized feature 127, Park
+35 location;id;anonymized feature 359, San Francisco
+36 location;id;anonymized feature 366, Los Angel
+37 name;anonymized feature 372, Jeffersion John
+38 work;employer;id;anonymized feature 373, H&M
+39 work;employer;id;anonymized feature 140, Burger King
+40 work;employer;id;anonymized feature 154, Microsoft
+41 work;end_date;anonymized feature 157, 12/2015
+42 work;end_date;anonymized feature 161, 12/2015
+43 work;location;id;anonymized feature 374, San Francisco
+44 work;location;id;anonymized feature 366, Los Angel
+45 work;start_date;anonymized feature 157, 1/2015
+46 work;start_date;anonymized feature 375, 1/2016
+47 work;start_date;anonymized feature 196, 2/2017
