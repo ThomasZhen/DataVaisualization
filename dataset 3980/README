@@ -1,1 +1,1 @@
-The blocks.json, circles.txt, dataset.txt, edges.txt, feat.txt, and featnames.txt in the server directory belongs to this folder
+The blocks.json, circles.txt, dataset.txt, edges.txt, feat.txt, and featnames.txt in the home directory(the directory where the app.js file is located) belong to this folder
