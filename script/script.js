@@ -71,9 +71,6 @@
                     // // mainGraph.nodeColor(mainNode => inputVal);
                     // mainGraph.nodeColor(nodeapp => inputVal);
                     
-                    
-                    
-                    
                 }
             
             } // end of for loop
@@ -84,8 +81,10 @@
         // Original code
         // Display the original data
         function displayOriginal(){
+
             // var temp = [];
             displayFunction(content);
+
         }
 
      
@@ -104,7 +103,6 @@
                     });
                 }
             }
-
 
         }
 
@@ -198,6 +196,7 @@
                 } 
             }
         }
+
 
 
 
@@ -347,6 +346,7 @@
         }
 
 
+
         function graphDatafactControl(){
             var rbs = document.querySelectorAll('input[name="choice1"]');
             for(var rb of rbs){
@@ -360,6 +360,7 @@
                 }
             }
         }
+
 
 
         function nodeDatafactControl(){
@@ -1572,8 +1573,6 @@
             listSeries[2] = areaSeries;
 
 
-
-
         } // end of drawAreaChart function
 
 
@@ -2155,7 +2154,6 @@
             // .d3AlphaDecay(0.0114) // 0.0228
 
 
-
             .graphData(data);
 
             // test(Graph);
@@ -2171,10 +2169,16 @@
                 if(!windowSize){
                     // mainGraph.width($(window).width())
                     mainGraph.height($(window).height())
+                    var divWidth = document.getElementById('displayGraph').offsetWidth;
+                    // mainGraph.width(1030)
+                    mainGraph.width(divWidth)
                     windowSize = true;
                 } else {
-                    mainGraph.width(1030)
+                    var divWidth = document.getElementById('displayGraph').offsetWidth;
+                    // mainGraph.width(1030)
+                    mainGraph.width(divWidth)
                     mainGraph.height(500)
+                    // mainGraph.height($(window).height())
                     windowSize = false;
                 }
             });
