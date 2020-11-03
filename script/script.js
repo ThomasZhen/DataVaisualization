@@ -1022,6 +1022,7 @@
                 comboCounter++;
             }
 
+            mainGraph.linkColor(() => 'gray');
 
         }
 
@@ -1900,6 +1901,10 @@
             }
 
 
+            console.log("name2 is");
+            console.log(name2);
+
+
             oldOption1 = option1;
             oldOption2 = option2;
 
@@ -1933,10 +1938,26 @@
             }
 
 
+            // console.log("The tempArr is");
+            // console.log(tempArr);
+
             var max = -1;
             var min = Number.MAX_SAFE_INTEGER;
             var index1 = -1;
             var index2 = -1;
+
+
+            // console.log("the min value is");
+            // console.log(min);
+
+
+            // console.log("Type of min is");
+            // console.log(typeof min);
+
+
+            // console.log("tyeof tempArr[0]");
+            // console.log(typeof tempArr[0]);
+
             for(var i = 0; i < tempArr.length; i++){
                 if(tempArr[i] > max){
                     max = tempArr[i];
@@ -1950,35 +1971,49 @@
 
             }
 
-
-            li1.appendChild(document.createTextNode("Total number of nodes is " + totalNum + " across all " + option1 + " and " + option2));
+            
+            // li1.appendChild(document.createTextNode("Total number of nodes is " + totalNum + " across all " + option1 + " and " + option2));
+            li1.appendChild(document.createTextNode("Total number of nodes is " + totalNodes + " across all " + option1 + " and " + option2));
             li1.style.color = "black";
 
             var li2 = document.createElement("li");
 
-            li2.appendChild(document.createTextNode("The distribution ranges from " + smallest + " nodes to " + largest + " nodes, the difference is " + (largest - smallest) + " nodes"));
+            li2.appendChild(document.createTextNode("The distribution of number of nodes among the two properties ranges from " + smallest + " nodes to " + largest + " nodes, the difference is " + (largest - smallest) + " nodes"));
             li2.style.color = "black";
 
             var li3 = document.createElement("li");
 
 
-            li3.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index1] + " represent over " + Math.floor(((max / totalNum) * 100))  + "% of all the nodes across all x axis attributes"));
+            // li3.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index1] + " represent over " + Math.floor(((max / totalNum) * 100))  + "% of all the nodes across all x axis attributes"));
+            li3.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index1] + " represent over " + Math.floor(((max / totalNodes) * 100))  + "% of all the nodes across all" + option2 + " attributes"));
             li3.style.color = "black";
 
+
+             var li6 = document.createElement("li");
+
+
+            // li3.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index1] + " represent over " + Math.floor(((max / totalNum) * 100))  + "% of all the nodes across all x axis attributes"));
+            li6.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index2] + " represent over " + Math.floor(((min / totalNodes) * 100))  + "% of all the nodes across all" + option2 + " attributes"));
+            li6.style.color = "black";
+
+
             var li4 = document.createElement("li");
+
 
             li4.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index1] + " has the greates number of nodes for " + max + " nodes"));
             li4.style.color = "black";
 
             var li5 = document.createElement("li");
 
-            li5.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index1] + " has the greates number of nodes for " + min + " nodes"));
+            li5.appendChild(document.createTextNode("The number of nodes of " + option2 + " " + name2[index2] + " has the least number of nodes for " + min + " nodes"));
             li5.style.color = "black";
+
 
             ul.appendChild(t);
             ul.appendChild(li1);
             ul.appendChild(li2);
             ul.appendChild(li3);
+            ul.appendChild(li6);
             ul.appendChild(li4);
             ul.appendChild(li5);
 
@@ -2022,6 +2057,7 @@
 
 
 
+
         function changeChosenNodeColor(clickedNode, relatedNodes) {
 
             mainGraph.nodeColor(
@@ -2045,6 +2081,7 @@
 
         }
    
+
 
         function changeLinkColor(node){
 
