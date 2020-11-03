@@ -1901,8 +1901,8 @@
             }
 
 
-            console.log("name2 is");
-            console.log(name2);
+            // console.log("name2 is");
+            // console.log(name2);
 
 
             oldOption1 = option1;
