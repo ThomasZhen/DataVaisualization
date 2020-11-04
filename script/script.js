@@ -859,6 +859,7 @@
         }
 
 
+
         function changeColor(chart, data, option, selectedItem, name){
 
             var temp = selectedItem;
@@ -2121,10 +2122,55 @@
                 changeNodeColor(group);
             }
 
+
+            if(text[0] == "Node"){
+                changeNodeAndLink(text[1]);
+            }
+
         }
 
 
+        function changeNodeAndLink(nodeNum){
+            mainGraph.nodeColor(
+
+                nodeapp => {
+
+                    if(nodeapp.id == nodeNum){
+
+                        return "red";
+ 
+                    } else {
+                    
+                        return "black";
+
+                    }
+                }
+
+            );
+
+
+            mainGraph.linkColor(
+
+                linkapp => {
+
+                        if(linkapp.source.id == nodeNum || linkapp.target.id == nodeNum){
+
+                            return "blue";
+
+                        } else {
+        
+                            return "gray";
+                        }
+
+                }
+
+            );
+        }
+
+
+
         function changeNodeColor(groupNum) {
+
             var groupNode = groupArray[groupNum];
 
             mainGraph.nodeColor(
@@ -2143,6 +2189,8 @@
                 }
 
             );
+
+            mainGraph.linkColor(() => "grey");
 
         }
 
