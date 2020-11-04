@@ -301,6 +301,8 @@
             <div class="row">
                 <input class="buttonStyle" type="button" value="Execute"  onclick="chartOpt()"/>
             </div>
+
+
            <!--  <div class="row">
                 <input class="buttonStyle" type="button" value="Reset Node Color" onclick="resetNodeColor()"/>
             </div> -->
@@ -311,6 +313,7 @@
                 <button type="button" id="hideExpenses"  >Hide Expence</button>
             </div> -->
             <!-- Testing code -->
+
 
           </div>
           
@@ -695,9 +698,9 @@
 
             // Number of nodes in each group
             // What is the largest group, how many nodes in it?
-            graphList.innerHTML += "<li>The largest group in this dataset is " + largestGroup + ", there are " + largest + " nodes in it</li>";
+            graphList.innerHTML += "<li>The largest group in this dataset is " + largestGroup + " , there are " + largest + " nodes in it</li>";
             // What is the smallest group, how many nodes in it?
-             graphList.innerHTML += "<li>The smallest group in this dataset is " + smallestGroup + ", there are " + smallest + " nodes in it</li>";
+             graphList.innerHTML += "<li>The smallest group in this dataset is " + smallestGroup + " , there are " + smallest + " nodes in it</li>";
 
              graphList.style.color = "black";
 
@@ -717,6 +720,9 @@
             nodeList.innerHTML += "<li>Node " + greatestLinkNode + " has the greatest number of links, it has " + greatestLinksNum + " links</li>";
             
             nodeList.style.color = "black";
+
+            // Testing code
+            nodeList.addEventListener("click", clickText, true);
 
         });
 
