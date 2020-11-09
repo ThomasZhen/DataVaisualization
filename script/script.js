@@ -1973,8 +1973,8 @@
             }
 
             
-            // li1.appendChild(document.createTextNode("Total number of nodes is " + totalNum + " across all " + option1 + " and " + option2));
-            li1.appendChild(document.createTextNode("Total number of nodes is " + totalNodes + " across all " + option1 + " and " + option2));
+            li1.appendChild(document.createTextNode("Total number of nodes is " + totalNum + " across all " + option1 + " and " + option2));
+            // li1.appendChild(document.createTextNode("Total number of nodes is " + totalNodes + " across all " + option1 + " and " + option2));
             li1.style.color = "black";
 
             var li2 = document.createElement("li");
@@ -2011,7 +2011,9 @@
 
 
             ul.appendChild(t);
-            ul.appendChild(li1);
+
+            // ul.appendChild(li1);
+            
             ul.appendChild(li2);
             ul.appendChild(li3);
             ul.appendChild(li6);
