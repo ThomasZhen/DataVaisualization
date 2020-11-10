@@ -2202,6 +2202,8 @@
             var node = data.node;
             mainNode = data.node;
             // var newNodeArray1 = nodeArray;
+        
+            
 
             var divWidth = document.getElementById('displayGraph').offsetWidth;
 
@@ -2215,9 +2217,8 @@
             .nodeRelSize(6)
             // node of the same group have the same color based on the user
 
-            .nodeAutoColorBy('user')
+            // .nodeAutoColorBy('user')
 
-        
             // .nodeLabel(node => `${node.user}: ${node.description}`)
             .nodeLabel(node => `${node.description}`)
 
@@ -2246,6 +2247,7 @@
             // test(Graph);
 
             changeWindowSize();
+            assignNodeColor();
         }
 
 
@@ -2270,3 +2272,32 @@
                 }
             });
         }
+
+
+        function assignNodeColor(){
+            var count = 1;
+
+            var tempColor = colorArray;
+
+            mainGraph.nodeColor(
+
+                nodeapp => {
+                    
+                    for(var i = 0; i < groupArray.length; i++){
+                        for(var j = 0; j < groupArray[i].length; j++){
+                            if(nodeapp.id == groupArray[i][j]){
+
+                                return colorArray[i];
+                            }
+                        }
+
+                        count++;
+                    }
+                    
+                    return "black";
+                }
+
+            );
+        }
+
+     
