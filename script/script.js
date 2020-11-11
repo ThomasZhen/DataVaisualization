@@ -1318,9 +1318,15 @@
             // console.log("tempRows is");
             // console.log(tempRows);
 
+            var maxLength = 0;
 
             for(var i = 0; i < tempRows.length; i++){
-                while(tempRows[i].length < 5){
+                if(tempRows[i].length > maxLength) maxLength = tempRows[i].length;
+            }
+
+
+            for(var i = 0; i < tempRows.length; i++){
+                while(tempRows[i].length < maxLength){
                     tempRows[i].push(0);
                 }
             }
@@ -1470,8 +1476,21 @@
 
 
 
+            // for(var i = 0; i < arr.length; i++){
+            //     while(arr[i].length < 5){
+            //         arr[i].push(0);
+            //     }
+            // }
+
+            var maxLength = 0;
+
             for(var i = 0; i < arr.length; i++){
-                while(arr[i].length < 5){
+                if(arr[i].length > maxLength) maxLength = arr[i].length;
+            }
+
+
+            for(var i = 0; i < arr.length; i++){
+                while(arr[i].length < maxLength){
                     arr[i].push(0);
                 }
             }
@@ -1591,13 +1610,21 @@
             }
 
 
+            var maxLength = 0;
+
             for(var i = 0; i < temp.length; i++){
-                while(temp[i].length < 5){
-                    temp[i].push(i);
+                if(temp[i].length > maxLength) maxLength = temp[i].length;
+            }
+
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < maxLength){
+                    temp[i].push(0);
                 }
             }
 
-             areaData = google.visualization.arrayToDataTable(temp);
+
+            areaData = google.visualization.arrayToDataTable(temp);
 
 
              areaView = areaData;
@@ -1699,10 +1726,14 @@
                 temp.push(aaa);
             }
 
-
+            var maxLength = 0;
 
             for(var i = 0; i < temp.length; i++){
-                while(temp[i].length < 5){
+                if(temp[i].length > maxLength) maxLength = temp[i].length;
+            }
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < maxLength){
                     temp[i].push(0);
                 }
             }
@@ -1813,8 +1844,14 @@
             }
 
 
+            var maxLength = 0;
+
             for(var i = 0; i < temp.length; i++){
-                while(temp[i].length < 5){
+                if(temp[i].length > maxLength) maxLength = temp[i].length;
+            }
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < maxLength){
                     temp[i].push(0);
                 }
             }
@@ -1931,8 +1968,15 @@
 
 
 
+            var maxLength = 0;
+
             for(var i = 0; i < temp.length; i++){
-                while(temp[i].length < 5){
+                if(temp[i].length > maxLength) maxLength = temp[i].length;
+            }
+
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < maxLength){
                     temp[i].push(0);
                 }
             }
