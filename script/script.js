@@ -410,51 +410,97 @@
 
                     var temp = getOpt();
 
+                    /*
+                    var lineCounter = 3;
+                    var barCounter = 3;
+                    var areaCounter = 3;
+                    var steppedAreaCounter = 3;
+                    var columnCounter = 3;
+                    var comboCounter = 3;
+                    */
+
+
 
                     for(var i = 0; i < temp.length; i++){
                         if(temp[i] == "Line Chart"){
-                            $('#chart1').empty();
-                            drawLineChart(option1, option2, name1, name2, tempValues);
+                            // console.log("$('#chart1') is");
+                            // console.log($('#chart1'));
+                            // console.log("$('#chart1').empty() is");
+                            // console.log($('#chart1').empty());
+
+                            // $('#chart1').empty();
+                            
+                            // if ( $('#chart1').html().length == 0) {
+                                // console.log("It is empty at this moment");
+                                 $('#chart1').empty();
+                                  lineCounter = 3;
+                                 drawLineChart(option1, option2, name1, name2, tempValues);
+                            // }
+
+
+                            // drawLineChart(option1, option2, name1, name2, tempValues);
                         } else if(temp[i] == "Clear Line Chart"){
                             $('#chart1').empty();
-                             document.getElementById("chart1").style.height = '0px';               
+                            lineChart = undefined;
+                            lineCounter = 3;
+                            document.getElementById("chart1").style.height = '0px';               
                         }
 
                         if(temp[i] == "Bar Chart"){
+                            $('#chart2').empty();
+                            barCounter = 3;
                             drawBarChart(option1, option2, name1, name2, tempValues);
                         } else if(temp[i] == "Clear Bar Chart"){
                             $('#chart2').empty();
+                            barChart = undefined;
+                            barCounter = 3;
                             document.getElementById("chart2").style.height = '0px';
                         }
 
                         if(temp[i] == "Area Chart"){
+                            $('#chart3').empty();
+                            areaCounter = 3;
                             drawAreaChart(option1, option2, name1, name2, tempValues);
                         } else if(temp[i] == "Clear Area Chart"){
                             $('#chart3').empty();
+                            areaChart = undefined;
+                            areaCounter = 3;
                             document.getElementById("chart3").style.height = '0px';
                         }
 
 
                         if(temp[i] == "Stepped Area Chart"){
+                            $('#chart4').empty();
+                            steppedAreaCounter = 3;
                             drawSteppedAreaChart(option1, option2, name1, name2, tempValues);
                         } else if(temp[i] == "Clear Stepped Area Chart"){
                             $('#chart4').empty();
+                            steppedAreaChart = undefined;
+                            steppedAreaCounter = 3;
                             document.getElementById("chart4").style.height = '0px';
                         }
 
 
                         if(temp[i] == "Column Chart"){
+                            $('#chart5').empty();
+                            columnCounter = 3;
                             drawColumnChart(option1, option2, name1, name2, tempValues);
                         } else if(temp[i] == "Clear Column Chart"){
                             $('#chart5').empty();
+                            columnChart = undefined;
+                            columnCounter = 3;
                             document.getElementById("chart5").style.height = '0px';
                         }
 
 
                         if(temp[i] == "Combo Chart"){
+                            $('#chart6').empty();
+                            comboCounter = 3;
                             drawComboChart(option1, option2, name1, name2, tempValues);
                         } else if(temp[i] == "Clear Combo Chart"){
                             $('#chart6').empty();
+                            comboChart = undefined;
+                            comboCounter = 3;
                             document.getElementById("chart6").style.height = '0px';
                         }
 
@@ -471,9 +517,7 @@
                             var selection = lineChart.getSelection();
 
                            
-
                             if(temp.row != null && temp.column != null){
-
 
                                 changeColor(lineChart, lineData, lineOption, temp, "lineView");
 
@@ -535,7 +579,6 @@
                             var temp = barChart.getSelection()[0];
                             var selection = barChart.getSelection();
 
-                           
 
                             if(temp.row != null && temp.column != null){
 
@@ -623,7 +666,6 @@
                                  if(comboChart != undefined){
                                     changeColor(comboChart, comboData, comboOption, temp, "comboView");
                                 }
-
                                 if(areaCounter % 2 == 0){
                                     selectHandler(areaChart, areaData, newOption1, newOption2, newName1, newName2, selection);
                                 }
@@ -684,10 +726,10 @@
                                     changeColor(areaChart, areaData, areaOption, temp, "areaView");
                                 }
                                 if(columnChart != undefined){
-                                    changeColor(columnChart, columnData, columnOption, temp, "areaView");
+                                    changeColor(columnChart, columnData, columnOption, temp, "columnView");
                                 }
                                  if(comboChart != undefined){
-                                    changeColor(comboChart, comboData, comboOption, temp, "areaView");
+                                    changeColor(comboChart, comboData, comboOption, temp, "comboView");
                                 }
 
                                 if(steppedAreaCounter % 2 == 0){
@@ -762,7 +804,7 @@
                                 lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");
 
                                 if(lineChart != undefined){
-                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "linneView");      
+                                    lineDisappear(lineChart, lineData, lineOption, lineColumns, lineSeries, selection, "lineView");      
                                 }
                                 if(barChart != undefined){
                                     lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
@@ -832,7 +874,6 @@
                                     lineDisappear(barChart, barData, barOption, barColumns, barSeries, selection, "barView");
                                 }
                                 if(areaChart != undefined){
-
                                     lineDisappear(areaChart, areaData, areaOption, areaColumns, areaSeries, selection, "areaView");
                                 }
                                 if(steppedAreaChart != undefined){
@@ -841,7 +882,6 @@
                                 if(columnChart != undefined){
                                     lineDisappear(columnChart, columnData, columnOption, columnColumns, columnSeries, selection, "columnView");      
                                 }
-
                             }
                         }
                         
@@ -866,7 +906,7 @@
 
             if(name == "lineView"){
 
-                chart.draw(lineView, option);
+                // chart.draw(lineView, option);
 
 
                 if(lineCounter % 2 == 1){
@@ -893,6 +933,8 @@
 
 
             if(name == "barView"){
+
+                // chart.draw(lineView, option);
 
                 if(barCounter % 2 == 1){
                     var index = temp.column - 1;
@@ -1119,6 +1161,25 @@
 
 
         function selectHandler(chart, data, option1, option2, name1, name2, select){
+
+
+
+                // console.log("The chart is");
+                // console.log(chart);
+                // console.log("The data is");
+                // console.log(data);
+                // console.log("The option1 is");
+                // console.log(option1);
+                // console.log("The option2 is");
+                // console.log(option2);
+                // console.log("The name1 is");
+                // console.log(name1);
+                // console.log("The name2 is");
+                // console.log(name2);
+                // console.log("The select is");
+                // console.log(select);
+
+
 
                 var columnNumber;
 
@@ -1469,6 +1530,12 @@
             }
 
 
+            newOption1 = option1;
+            newOption2 = option2;
+            newName1 = name1;
+            newName2 = name2;
+
+
 
             listCharts[1] = barChart;
             listDatas[1] = barData;
@@ -1567,6 +1634,11 @@
             }
 
 
+            newOption1 = option1;
+            newOption2 = option2;
+            newName1 = name1;
+            newName2 = name2;
+
 
             listCharts[2] = areaChart;
             listDatas[2] = areaData;
@@ -1661,6 +1733,14 @@
                     steppedAreaSeries[i - 1] = {};
                 }
             }
+
+
+
+
+            newOption1 = option1;
+            newOption2 = option2;
+            newName1 = name1;
+            newName2 = name2;
 
 
             listCharts[3] = steppedAreaChart;
@@ -1767,6 +1847,11 @@
         }
 
 
+        newOption1 = option1;
+        newOption2 = option2;
+        newName1 = name1;
+        newName2 = name2;
+
 
         listCharts[4] = columnChart;
         listDatas[4] = columnData;
@@ -1871,6 +1956,13 @@
                 comboSeries[i - 1] = {};
             }
         }
+
+
+
+        newOption1 = option1;
+        newOption2 = option2;
+        newName1 = name1;
+        newName2 = name2;
 
 
         listCharts[5] = comboChart;
@@ -2240,6 +2332,9 @@
 
             // Set how spread out the graph looks like
             // .d3AlphaDecay(0.0114) // 0.0228
+            // .d3Force('link').strength(0.1)
+            // .d3AlphaDecay(0.0114)
+            // .d3VelocityDecay(0.5)
 
 
             .graphData(data);
