@@ -1315,6 +1315,17 @@
             }
 
 
+            // console.log("tempRows is");
+            // console.log(tempRows);
+
+
+            for(var i = 0; i < tempRows.length; i++){
+                while(tempRows[i].length < 5){
+                    tempRows[i].push(0);
+                }
+            }
+
+
             lineData.addRows(tempRows);
 
 
@@ -1458,6 +1469,14 @@
             }
 
 
+
+            for(var i = 0; i < arr.length; i++){
+                while(arr[i].length < 5){
+                    arr[i].push(0);
+                }
+            }
+
+
             barData = google.visualization.arrayToDataTable(arr);
 
 
@@ -1572,6 +1591,12 @@
             }
 
 
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < 5){
+                    temp[i].push(i);
+                }
+            }
+
              areaData = google.visualization.arrayToDataTable(temp);
 
 
@@ -1674,6 +1699,15 @@
                 temp.push(aaa);
             }
 
+
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < 5){
+                    temp[i].push(0);
+                }
+            }
+
+         
             steppedAreaData = google.visualization.arrayToDataTable(temp);
 
 
@@ -1776,6 +1810,13 @@
                     aaa.push(tempValues[i][j]);
                 }
                 temp.push(aaa);
+            }
+
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < 5){
+                    temp[i].push(0);
+                }
             }
 
             columnData = google.visualization.arrayToDataTable(temp);
@@ -1887,6 +1928,15 @@
                 }
                 temp.push(aaa);
             }
+
+
+
+            for(var i = 0; i < temp.length; i++){
+                while(temp[i].length < 5){
+                    temp[i].push(0);
+                }
+            }
+
 
             comboData = google.visualization.arrayToDataTable(temp);
 
