@@ -1349,7 +1349,7 @@
                 colors:['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'gold', 'dark green', 'LightSalmon', 'MediumPurple', 'OrangeRed', 'SpringGreen', 'YellowGreen'],
 
                 // chart: {
-                    title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
+                    // title: "Number of nodes that have both " + option1 + " and " + option2 + " propertie",
                     // subtitle: 'in millions of dollars (USD)'
                     // backgroundColor: 'black'
 
@@ -1493,7 +1493,7 @@
 
 
                 chart: {
-                    title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
+                    // title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
                     // subtitle: 'Sales, Expenses, and Profit: 2014-2017',
                 },
 
@@ -1606,7 +1606,7 @@
             var options = {
                 colors:['red', 'blue', 'green', 'yellow', 'purple', 'pink', 'gold', 'dark green', 'LightSalmon', 'MediumPurple', 'OrangeRed', 'SpringGreen', 'YellowGreen'],
 
-                title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
+                // title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
                 // hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
                 // vAxis: {minValue: 0}
                  backgroundColor: 'white',
@@ -1721,7 +1721,7 @@
                 // vAxis: {title: 'Accumulated Rating'},
                 // isStacked: true
 
-                title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
+                // title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
                 
                 backgroundColor: 'white',
 
@@ -1835,7 +1835,7 @@
 
 
 
-              title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
+              // title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
                 
                 backgroundColor: 'white',
 
@@ -1958,7 +1958,7 @@
           seriesType: 'bars',
           series: {5: {type: 'line'}},
 
-           title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
+           // title: "Number of nodes that have both " + option1 + " and " + option2 + " properties",
                 
                 backgroundColor: 'white',
 
